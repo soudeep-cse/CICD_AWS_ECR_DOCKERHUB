@@ -41,10 +41,8 @@ After these steps the self-hosted runner can build and push Docker images when w
 - AWS_ACCESS_KEY_ID
 - AWS_SECRET_ACCESS_KEY
 - AWS_REGION
-- AWS_ACCOUNT_ID (optional, used for ECR URL)
 - ECR_REPOSITORY
-- DOCKERHUB_USERNAME
-- DOCKERHUB_PASSWORD or DOCKERHUB_TOKEN
+- AWS_ECR_LOGIN_URI
 
 ## How it works
 On push (or manual dispatch) Actions builds the Docker image from the repo, tags it, then logs into AWS ECR and Docker Hub using the repository secrets and pushes the image.
