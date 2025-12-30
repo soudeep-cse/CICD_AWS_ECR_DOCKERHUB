@@ -59,7 +59,7 @@ jobs:
           # Validate variables to avoid empty tags
           test -n "$ECR_REPOSITORY" || (echo "ECR_REPOSITORY is empty" && exit 1)
           test -n "$ECR_REGISTRY" || (echo "ECR_REGISTRY is empty" && exit 1)
-          sudo docker build -t $ECR_REPOSITORY:$IMAGE_TAG .
+          docker build -t $ECR_REPOSITORY:$IMAGE_TAG .
           docker tag $ECR_REPOSITORY:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
