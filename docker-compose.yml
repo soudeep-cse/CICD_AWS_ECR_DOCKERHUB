@@ -1,0 +1,9 @@
+services:
+  # AI Service
+  ai:
+    build: .
+    container_name: kilian_ai_service
+    env_file: .env
+    ports:
+      - "8010:8010"
+    restart: always
